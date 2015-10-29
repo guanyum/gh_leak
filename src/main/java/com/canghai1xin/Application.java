@@ -2,6 +2,7 @@ package com.canghai1xin;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,6 +11,7 @@ import javax.annotation.Resource;
 
 @RestController
 @EnableAutoConfiguration
+@ComponentScan
 public class Application {
 
     @Resource

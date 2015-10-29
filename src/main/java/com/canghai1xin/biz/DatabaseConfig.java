@@ -1,4 +1,4 @@
-package com.canghai1xin;
+package com.canghai1xin.biz;
 
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.context.annotation.Bean;
