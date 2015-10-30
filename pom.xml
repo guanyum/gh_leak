@@ -50,6 +50,12 @@
             <version>4.0.6.RELEASE</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -77,9 +83,11 @@
                 <configuration>
                     <mainClass>com.canghai1xin.Application</mainClass>
                     <!--指定监听的端口号-->
+<!--
                     <jvmArguments>
-                        -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8081
+                        &lt;!&ndash;-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8081&ndash;&gt;
                     </jvmArguments>
+-->
                 </configuration>
             </plugin>
         </plugins>

@@ -1,15 +1,31 @@
-
-<table border="1">
+<table border="1" class="fixed">
+    <col width="200px" />
+    <col width="200px" />
+    <col width="200px" />
+    <col width="200px" />
+    <col width="200px" />
+    <col width="200px" />
     <tr>
-        <th>id</th>
-        <th>owner</th>
+        <th>1单元01室</th>
+        <th>1单元02室</th>
+        <th>1单元03室</th>
+        <th>2单元01室</th>
+        <th>2单元02室</th>
+        <th>2单元03室</th>
     </tr>
+<tr>
     #foreach($data in $list)
-        <tr>
-            <td>$data.id</td>
-            <td>$!data.owner</td>
+        <td #if($!data.leakRepresenter) bgcolor="#87ceeb" #end>
+            $data.id
+            #if(($data.owner))($!data.owner)#end
+            #if($data.ownerMobile) <a href="tel:$data.ownerMobile">tel</a>#end
+            <br/>$!data.memo
+        </td>
+        #if($velocityCount%6 == 0)
         </tr>
+        <tr>
+        #end
     #end
-
+</tr>
 </table>
 

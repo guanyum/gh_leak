@@ -31,6 +31,7 @@ public class GhLeakService {
                 _returnDO.setOwner(rs.getString("owner"));
                 _returnDO.setOwnerMobile(rs.getString("owner_mobile"));
                 _returnDO.setOwnerNick(rs.getString("owner_nick"));
+                _returnDO.setIsLeakRepresenter("y".equals(rs.getString("is_leak_representer")));
 
                 return _returnDO;
             }
@@ -39,13 +40,15 @@ public class GhLeakService {
         
         return list;
     }
-    
+
     public void insert(String id) {
         String insert = "insert into gh_house(id) values ('%s')";
         jdbcTemplate.update(String.format(insert, id));
     }
     
-    public void update() {
+    public void update(String id, String column, String columnVal) {
+        String update = "update gh_house set " + column + "='" + columnVal + "' where id='" + id + "'";
         
+        jdbcTemplate.update(update);
     }
 }

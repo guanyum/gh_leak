@@ -4,17 +4,17 @@ package com.canghai1xin.biz.domain;
 public class GhHouseDO implements Comparable<GhHouseDO> {
 
     private String id;
-    
+
     private String owner;
-    
+
     private String ownerMobile;
-    
+
     private String memo;
-    
+
     private String ownerNick;
-    
+
     private boolean isRepresenter;
-    
+
     private boolean isLeakRepresenter;
 
     public String getId() {
@@ -73,13 +73,32 @@ public class GhHouseDO implements Comparable<GhHouseDO> {
         this.isLeakRepresenter = isLeakRepresenter;
     }
 
+    // 7-3-5501 (55)
+    public int level() {
+        return Integer.parseInt(id.substring(id.lastIndexOf("-") + 1, id.length() - 2));
+    }
+
+    // 7-3-5501 (3)
+    public int danyuan() {
+        return Integer.parseInt(id.substring(2, id.lastIndexOf("-")));
+    }
+
+    // 7-3-5501 (1)
+    public int menpai() {
+        return Integer.parseInt(id.substring(id.length() - 2));
+    }
+
+    public int ordinal() {
+        return -10000 * level() + 100 * danyuan() + menpai();
+    }
+
     @Override
     public int compareTo(GhHouseDO o) {
         if (o == null) {
             return 1;
         }
 
-        return this.id.compareTo(o.id);
+        return this.ordinal() - o.ordinal();
     }
 
     @Override
@@ -95,5 +114,13 @@ public class GhHouseDO implements Comparable<GhHouseDO> {
                ", representer=" + isRepresenter() +
                ", leakRepresenter=" + isLeakRepresenter() +
                '}';
+    }
+
+    public static void main(String[] args) {
+        GhHouseDO ghHouseDO = new GhHouseDO();
+        ghHouseDO.id = "7-3-5501";
+        System.out.println(ghHouseDO.level());
+        System.out.println(ghHouseDO.danyuan());
+        System.out.println(ghHouseDO.menpai());
     }
 }
