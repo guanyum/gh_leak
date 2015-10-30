@@ -18,6 +18,7 @@
         <td #if($!data.leakRepresenter) bgcolor="#87ceeb" #end>
             $data.id
             #if(($data.owner))($!data.owner)#end
+            #if($data.ownerMobile) <a href="tel:$data.ownerMobile">tel</a>#end
             <br/>$!data.memo
         </td>
         #if($velocityCount%6 == 0)

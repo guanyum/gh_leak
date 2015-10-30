@@ -29,4 +29,11 @@ public class VelocityController {
 
         return "list";
     }
+
+    @RequestMapping("/list2")
+    public String list2(Map<String, Object> model) {
+        model.put("list", ghLeakService.listAllGhHouse());
+
+        return "list2";
+    }
 }
