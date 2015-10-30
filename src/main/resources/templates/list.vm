@@ -1,0 +1,15 @@
+
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>owner</th>
+    </tr>
+    #foreach($data in $list)
+        <tr>
+            <td>$data.id</td>
+            <td>$data.owner</td>
+        </tr>
+    #end
+
+</table>
+
