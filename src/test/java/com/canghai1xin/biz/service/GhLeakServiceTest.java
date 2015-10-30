@@ -2,6 +2,7 @@ package com.canghai1xin.biz.service;
 
 import com.canghai1xin.Application;
 import com.canghai1xin.biz.domain.GhHouseDO;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class GhLeakServiceTest {
 
     @Autowired
     GhLeakService ghLeakService;
-
+    
     @Test
     public void test1() {
         List<GhHouseDO> list = ghLeakService.listAllGhHouse();
@@ -25,6 +26,7 @@ public class GhLeakServiceTest {
         System.out.println("=============");
     }
 
+    @Ignore
     @Test
     public void test2() {
         for (int i = 34; i >= 2; i--) {
