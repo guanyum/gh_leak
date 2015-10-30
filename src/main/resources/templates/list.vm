@@ -7,7 +7,7 @@
     #foreach($data in $list)
         <tr>
             <td>$data.id</td>
-            <td>$data.owner</td>
+            <td>$!data.owner</td>
         </tr>
     #end
 

@@ -39,4 +39,13 @@ public class GhLeakService {
         
         return list;
     }
+    
+    public void insert(String id) {
+        String insert = "insert into gh_house(id) values ('%s')";
+        jdbcTemplate.update(String.format(insert, id));
+    }
+    
+    public void update() {
+        
+    }
 }
